@@ -12,12 +12,13 @@ import (
 )
 
 func main() {
-	client, err := ethclient.Dial("https://cloudflare-eth.com")
+
+	client, err := ethclient.Dial("https://eth-sepolia.g.alchemy.com/v2/9b28r4Hz8M_nF7j7DdOvCRsvX96Eg-0c")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	account := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
+	account := common.HexToAddress("0xcfe2c40aa55Ce799b55697870920484DDF651377")
 	balance, err := client.BalanceAt(context.Background(), account, nil)
 	if err != nil {
 		log.Fatal(err)
